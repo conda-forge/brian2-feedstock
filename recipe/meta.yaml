@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
@@ -41,7 +41,6 @@ requirements:
     - jinja2 >=2.7
     - setuptools >=6.0
     - py-cpuinfo >=0.1.6
-    - {{ compiler('cxx') }}
 
 test:
   imports:
