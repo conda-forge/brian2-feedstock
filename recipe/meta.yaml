@@ -20,8 +20,8 @@ requirements:
   host:
     - python
     - pip
-    - cython >=0.18
-    - setuptools >=6.0
+    - cython >=0.29
+    - setuptools >=21
     # we build against the oldest supported numpy version
     - numpy 1.10  # [not py36]
     - numpy 1.11  # [py36]
@@ -37,10 +37,10 @@ requirements:
     - weave  # [py2k]
     - bsddb  # [py2k and not win]
     - gsl >1.15
-    - cython >=0.18
+    - cython >=0.29
     - jinja2 >=2.7
-    - setuptools >=6.0
-    - py-cpuinfo >=0.1.6,<4.0.0
+    - setuptools >=21
+    - py-cpuinfo  # [win]
 
 test:
   imports:
@@ -68,9 +68,6 @@ test:
     - brian2.tests.features
     - brian2.units
     - brian2.utils
-
-  requires:
-    - nose
 
 about:
   home: http://www.briansimulator.org/
