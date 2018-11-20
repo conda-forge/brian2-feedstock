@@ -1,6 +1,6 @@
 {% set name = "Brian2" %}
-{% set version = "2.2" %}
-{% set sha256 = "cbbd0c411d4a7d3e5ef61fb5c698b8b0a4ae3b8989d6cc19a1505c5591a712f7" %}
+{% set version = "2.2.1" %}
+{% set sha256 = "188b57904381c6968c7b2053cd0c323a8fe13c7bb7866e3253cba05388bd8006" %}
 
 package:
   name: {{ name|lower }}
@@ -20,8 +20,8 @@ requirements:
   host:
     - python
     - pip
-    - cython >=0.18
-    - setuptools >=6.0
+    - cython >=0.29
+    - setuptools >=21
     # we build against the oldest supported numpy version
     - numpy 1.10  # [not py36]
     - numpy 1.11  # [py36]
@@ -37,10 +37,10 @@ requirements:
     - weave  # [py2k]
     - bsddb  # [py2k and not win]
     - gsl >1.15
-    - cython >=0.18
+    - cython >=0.29
     - jinja2 >=2.7
-    - setuptools >=6.0
-    - py-cpuinfo >=0.1.6,<4.0.0
+    - setuptools >=21
+    - py-cpuinfo  # [win]
 
 test:
   imports:
