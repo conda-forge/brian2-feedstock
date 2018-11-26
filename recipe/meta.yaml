@@ -41,6 +41,8 @@ requirements:
     - jinja2 >=2.7
     - setuptools >=21
     - py-cpuinfo  # [win]
+    - gxx_linux-64  # [linux]
+    - clangxx_osx-64  # [osx]
 
 test:
   imports:
