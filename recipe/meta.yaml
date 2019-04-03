@@ -41,7 +41,7 @@ requirements:
     - jinja2 >=2.7
     - setuptools >=21
     - py-cpuinfo  # [win]
-    - {{ compiler('cxx') }}  # [not win]
+    - cxx-compiler  # [unix]
 
 test:
   imports:
