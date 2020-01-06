@@ -71,7 +71,7 @@ test:
     - brian2.utils
 
   requires:
-    - nose
+    - pytest
 
 about:
   home: http://www.briansimulator.org/
