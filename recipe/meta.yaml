@@ -1,6 +1,6 @@
 {% set name = "Brian2" %}
-{% set version = "2.3" %}
-{% set sha256 = "7c725209e0e907876e420477b5c8fef31326820f3e38a46a54dff55d669478b7" %}
+{% set version = "2.3.0.1" %}
+{% set sha256 = "6595a08f7d34e2084c43237208661e05af054b895a8eb4f0f6747693acb8317c" %}
 
 package:
   name: {{ name|lower }}
@@ -81,7 +81,7 @@ about:
   doc_url: http://brian2.readthedocs.io/
   license: CeCILL-2.1
   license_file: LICENSE
-  summary: 'A clock-driven simulator for spiking neural networks'
+  summary: A clock-driven simulator for spiking neural networks
   description: |
     Brian2 is a simulator for spiking neural networks available on almost all platforms.
     The motivation for this project is that a simulator should not only save the time of
