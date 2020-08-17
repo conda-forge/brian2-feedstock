@@ -40,7 +40,7 @@ requirements:
     - setuptools >=24
     - py-cpuinfo  # [win]
     - future
-    - {{ compiler('cxx') }}  # [unix]
+    - {{ compiler('cxx') }}  # [unix and python_impl == 'cpython']
 
 test:
   imports:
