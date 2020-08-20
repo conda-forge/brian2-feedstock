@@ -11,8 +11,9 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps -vv
+  skip: True  # [python_impl == 'pypy']
 
 requirements:
   build:
@@ -23,16 +24,13 @@ requirements:
     - cython >=0.29
     - setuptools >=24
     # we build against the oldest supported numpy version
-    - numpy 1.10  # [py < 36 and not win]
-    - numpy 1.11  # [(py >= 36 or win) and py < 38]
+    - numpy 1.11  # [py < 38]
     - numpy 1.14  # [py >= 38]
   run:
     - python
     # we don't need the same version as during the build, newer versions are
     # still ABI-compatible
-    - numpy >=1.10  # [py < 36 and not win]
-    - numpy >=1.11  # [(py >= 36 or win) and py < 38]
-    - numpy >=1.14  # [py >= 38]
+    - {{ pin_compatible('numpy') }}
     - sympy >=1.2
     - pyparsing
     - scipy >=0.13.3
