@@ -19,28 +19,25 @@ requirements:
   build:
     - {{ compiler('cxx') }}
   host:
-    - python
+    - python >=3.6
     - pip
     - cython >=0.29
-    - setuptools >=24
+    - setuptools >=24.2
     # we build against the oldest supported numpy version
-    - numpy 1.11  # [py < 38]
-    - numpy 1.14  # [py >= 38]
+    - numpy >=1.15
   run:
-    - python
+    - python >=3.6
     # we don't need the same version as during the build, newer versions are
     # still ABI-compatible
     - {{ pin_compatible('numpy') }}
     - sympy >=1.2
     - pyparsing
     - scipy >=0.13.3
-    - weave  # [py2k]
     - gsl >1.15
     - cython >=0.29
     - jinja2 >=2.7
-    - setuptools >=24
+    - setuptools >=24.2
     - py-cpuinfo  # [win]
-    - future
     - {{ compiler('cxx') }}  # [unix]
 
 test:
