@@ -1,6 +1,6 @@
 {% set name = "Brian2" %}
-{% set version = "2.3.0.2" %}
-{% set sha256 = "c3cb38928b4e17ef17112d50a1028badf9acd6e4726bb4a705b45cafebbc2426" %}
+{% set version = "2.4" %}
+{% set sha256 = "d4dcbb3d62f591c375bd672768ea436fb7a3c16e777e0dea8c0adafdaee0f980" %}
 
 package:
   name: {{ name|lower }}
@@ -11,9 +11,9 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
-  skip: True  # [python_impl == 'pypy']
+  skip: true  # [python_impl == 'pypy' or py < 36]
 
 requirements:
   build:
@@ -22,10 +22,9 @@ requirements:
     - python
     - pip
     - cython >=0.29
-    - setuptools >=24
+    - setuptools >=24.2
     # we build against the oldest supported numpy version
-    - numpy 1.11  # [py < 38]
-    - numpy 1.14  # [py >= 38]
+    - numpy >=1.15
   run:
     - python
     # we don't need the same version as during the build, newer versions are
@@ -34,13 +33,11 @@ requirements:
     - sympy >=1.2
     - pyparsing
     - scipy >=0.13.3
-    - weave  # [py2k]
     - gsl >1.15
     - cython >=0.29
     - jinja2 >=2.7
-    - setuptools >=24
+    - setuptools >=24.2
     - py-cpuinfo  # [win]
-    - future
     - {{ compiler('cxx') }}  # [unix]
 
 test:
@@ -51,7 +48,6 @@ test:
     - brian2.codegen.runtime
     - brian2.codegen.runtime.cython_rt
     - brian2.codegen.runtime.numpy_rt
-    - brian2.codegen.runtime.weave_rt
     - brian2.core
     - brian2.devices
     - brian2.devices.cpp_standalone
