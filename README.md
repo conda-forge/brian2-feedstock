@@ -5,9 +5,13 @@ Home: http://www.briansimulator.org/
 
 Package license: CECILL-2.1
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/brian2-feedstock/blob/master/LICENSE.txt)
 
 Summary: A clock-driven simulator for spiking neural networks
+
+Development: https://github.com/brian-team/brian2
+
+Documentation: http://brian2.readthedocs.io/
 
 Brian2 is a simulator for spiking neural networks available on almost all platforms.
 The motivation for this project is that a simulator should not only save the time of
