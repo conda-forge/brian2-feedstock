@@ -25,9 +25,8 @@ requirements:
   host:
     - python
     - pip
-    - cython >=0.29
-    - setuptools >=24.2
-    # we build against the oldest supported numpy version
+    - cython
+    - setuptools
     - numpy
   run:
     - python
