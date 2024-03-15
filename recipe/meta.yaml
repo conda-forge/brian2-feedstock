@@ -1,6 +1,6 @@
 {% set name = "Brian2" %}
-{% set version = "2.5.4" %}
-{% set sha256 = "5cc5d23b0707f1f2e0cd709c4fe82b8d8c6105db45e07fd5afe4bb278198652c" %}
+{% set version = "2.6.0" %}
+{% set sha256 = "a98788327f25d95d829298f9018ed35a28459df67ffc970fe5569c5147d809fe" %}
 
 package:
   name: {{ name|lower }}
@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 2
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   skip: true  # [python_impl == 'pypy' or py < 39]
 
