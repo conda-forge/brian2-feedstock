@@ -20,7 +20,7 @@ requirements:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - cython                                 # [build_platform != target_platform]
-    - numpy >=1.21                          # [build_platform != target_platform]
+    - numpy                                  # [build_platform != target_platform]
     - {{ compiler('cxx') }}
     - {{ stdlib('c') }}
   host:
@@ -29,11 +29,10 @@ requirements:
     - cython
     - setuptools >=61
     - setuptools_scm >=6.2
-    - numpy >=1.21
+    - numpy
   run:
     - python
-    # we don't need the same version as during the build, newer versions are
-    # still ABI-compatible
+    - numpy >=1.23
     - sympy >=1.2
     - pyparsing
     - scipy >=0.13.3
