@@ -1,4 +1,4 @@
-{% set name = "brian2" %}
+{% set name = "Brian2" %}
 {% set version = "2.7.0" %}
 {% set sha256 = "77d1835a9f021888dea6b59fe13b5c855777ea09a8dfa1c146404e2da4576e9a" %}
 
@@ -7,11 +7,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0]|lower }}/{{ name|lower }}/{{ name|lower }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   skip: true  # [python_impl == 'pypy' or py < 310]
 
