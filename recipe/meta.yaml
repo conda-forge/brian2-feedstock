@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 2
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   skip: true  # [python_impl == 'pypy' or py < 310]
 
@@ -34,7 +34,6 @@ requirements:
     - python
     # we don't need the same version as during the build, newer versions are
     # still ABI-compatible
-    - {{ pin_compatible('numpy') }}
     - sympy >=1.2
     - pyparsing
     - scipy >=0.13.3
