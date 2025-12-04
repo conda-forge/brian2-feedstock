@@ -13,7 +13,7 @@ source:
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
-  skip: true  # [python_impl == 'pypy' or py < 310]
+  skip: true  # [python_impl == 'pypy' or py < 312]
 
 requirements:
   build:
@@ -29,12 +29,12 @@ requirements:
     - cython
     - setuptools >=61
     - setuptools_scm >=6.2
-    - numpy
+    - numpy >=2.0.0
   run:
     - python
-    - numpy >=1.23
+    - numpy >=2.0.0
     - sympy >=1.2
-    - pyparsing
+    - pyparsing >=3
     - scipy >=0.13.3
     - gsl >1.15
     - cython >=0.29.21
