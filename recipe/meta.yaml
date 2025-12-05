@@ -29,7 +29,7 @@ requirements:
     - cython
     - setuptools >=61
     - setuptools_scm >=6.2
-    - numpy >=2.0.0
+    - numpy
   run:
     - python
     - numpy >=2.0.0
