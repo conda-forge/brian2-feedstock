@@ -1,19 +1,19 @@
 {% set name = "Brian2" %}
-{% set version = "2.10.1" %}
-{% set sha256 = "c1d21d7b092192362419d76fc871feab9ff0bb3d00e9265d8cd4086cc2e11b4f" %}
+{% set version = "2.11.0" %}
+{% set sha256 = "5743ecfced0005d01c143503dfe57ea8f81a431d6c3e4b149ba63454ee1c512e" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0]|lower }}/{{ name|lower }}/{{ name|lower }}-{{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/source/{{ name[0]|lower }}/{{ name|lower }}/{{ name|lower }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
-  skip: true  # [python_impl == 'pypy' or py < 312]
+  skip: true  # [python_impl == 'pypy' or py < 313]
 
 requirements:
   build:
@@ -32,7 +32,7 @@ requirements:
     - numpy
   run:
     - python
-    - numpy >=2.0.0
+    - numpy >=2.3.0
     - sympy >=1.2
     - pyparsing >=3
     - scipy >=0.13.3
